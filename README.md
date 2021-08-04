@@ -12,6 +12,10 @@ To install all the dependency packages, please run:
 ```
 pip install -r requirements.txt
 ```
+To download the model for spacy, please run:
+```
+python -m spacy download en
+```
 
 ## Data Preparation
 ### Dataset
