@@ -51,6 +51,8 @@ def get_args():
             help='number of iterations in sopl')
     parser.add_argument('--smooth_param', type=float, default=0.001,
             help='smooth parameter (beta)')
+    parser.add_argument('--center_init', type=str, default='kmeans++', choices=['random', 'kmeans++'],
+            help='prototype initialization')
     parser.add_argument('--time_weight', type=float, default=1,
             help='timestamp weight (gamma)')
     parser.add_argument('--K', type=int, default=0,

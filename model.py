@@ -3,11 +3,10 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from sklearn.cluster.k_means_ import _k_init # kmeans++ initialization
 
 
-np.random.seed(123)
-torch.manual_seed(0)
+#np.random.seed(123)
+#torch.manual_seed(0)
 
 class SOPL_Layer(nn.Module):
     def __init__(self, K, D, n_iter=3, beta=0.001, init='kmeans++'):
@@ -28,10 +27,14 @@ class SOPL_Layer(nn.Module):
     def forward(self, x):
         if self.init == 'kmeans++':
             ### Use the _k_init in sklearn to initialize centers (prototypes)
+            from sklearn.cluster.k_means_ import _k_init # kmeans++ initialization
             data = x.detach().cpu().numpy()
             squared_norm = (data ** 2).sum(axis=1)
             init_centers = _k_init(data, self.K, squared_norm, np.random.RandomState(1))
             centers = torch.from_numpy(init_centers).to(x.device).type(x.dtype)
+        else:
+            centers = 0.1 * torch.randn([self.K, x.shape[-1]]).to(x.device).type(x.dtype)
+
 
         x_ = torch.unsqueeze(x, 1).repeat(1, self.K, 1)
         for i in range(self.n_iter):
@@ -46,7 +49,7 @@ class SOPL_Layer(nn.Module):
 
 
 class MultiModal_SOPL(nn.Module):
-    def __init__(self, K_a, K_b, D, n_iter=3, beta=0.001):
+    def __init__(self, K_a, K_b, D, n_iter=3, beta=0.001, center_init='kmeans++'):
         super(MultiModal_SOPL, self).__init__()
         self.K_a = K_a
         self.K_b = K_b
@@ -63,8 +66,8 @@ class MultiModal_SOPL(nn.Module):
         self.fc_2.bias.data.copy_(torch.zeros([D]))
 
 
-        self.sopl_1 = SOPL_Layer(K_a, D+1, n_iter, beta)
-        self.sopl_2 = SOPL_Layer(K_b, D+1, n_iter, beta)
+        self.sopl_1 = SOPL_Layer(K_a, D+1, n_iter, beta, center_init)
+        self.sopl_2 = SOPL_Layer(K_b, D+1, n_iter, beta, center_init)
 
     def forward(self, x, y, x_times=None, y_times=None):
         """
