@@ -32,6 +32,8 @@ We include two video samples under the directory `./data/105222` from the task `
 
 For full dataset, please refer to [CrossTask Dataset](https://github.com/DmZhukov/CrossTask).
 
+If you want to use ProceL dataset, please refer to [ProceL](https://www.khoury.northeastern.edu/home/eelhami/procel.htm).
+
 ### Pretrained Model
   We use the pretrained model `Demo-Europarl-EN.pcl` as punctuator. If you want to perform punctuation to subtitles, please download this model from the [URL](https://drive.google.com/drive/folders/0B7BsN5f2F1fZQnFsbzJ3TWxxMms?resourcekey=0-6yhuY9FOeITBBWWNdyG2aw) (only Demo-Europarl-EN.pcl is needed) and put it to the folder `preprocessing/narr_process/punctuator/`.
 
