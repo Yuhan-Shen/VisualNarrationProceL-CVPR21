@@ -84,7 +84,7 @@ The training module (multimodal feature learning using DWSA) can be run by:
   ```
   python train.py --data_dir <data_dir> --task <task>
   ```
- You may change the hyparameters by arguments, such as learning rate (`--lr`), weight decay (`--wd`), batch size (`--batch_size`), max epochs (`--max_epochs`).  
+ You may change the hyparameters by arguments, such as learning rate (`--lr`), weight decay (`--wd`), batch size (`--batch_size`), max epoch (`--max_epoch`).  
   Other hyparameters can be set in a similar manner: timestamp weight (`--time_weight`), smoothing parameter (`--smooth_param`), empty alignment cost (`--delta_e`), and so on.
   
   
