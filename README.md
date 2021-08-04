@@ -26,7 +26,7 @@ apt-get install ffmpeg
 ```
 or any alternatives.
 
-Suggested Python version: 3.7.11, Cuda driver: 10.1
+Info: It works on Python version: 3.7.11, Cuda version: 10.1
 
 ## Data Preparation
 ### Dataset
