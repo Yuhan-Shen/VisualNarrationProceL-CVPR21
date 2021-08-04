@@ -1,0 +1,6 @@
+1 add_onion
+2 add_rice
+3 add_ham
+4 add_kimchi
+5 pour_sesame_oil
+6 stir_mixture
