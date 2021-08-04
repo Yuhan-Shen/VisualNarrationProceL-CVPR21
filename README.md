@@ -26,6 +26,8 @@ apt-get install ffmpeg
 ```
 or any alternatives.
 
+Suggested Python version: 3.7.11, Cuda driver: 10.1
+
 ## Data Preparation
 ### Dataset
 We include two video samples under the directory `./data/105222` from the task `make kimchi fried rice` in CrossTask dataset to show the required hierachy. You may run the following commands using these videos.
