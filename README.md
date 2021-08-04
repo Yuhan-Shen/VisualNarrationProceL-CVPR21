@@ -16,9 +16,19 @@ To download the model for spacy, please run:
 ```
 python -m spacy download en
 ```
+`ffmpeg` is required for loading videos. If you do not have it installed, you may run
+```
+conda install ffmpeg
+```
+or 
+```
+apt-get install ffmpeg
+```
+or any alternatives.
 
 ## Data Preparation
 ### Dataset
+We include two video samples under the directory `./data/105222` from the task `make kimchi fried rice` in CrossTask dataset to show the required hierachy.
 
 ### Pretrained Model
   We use the pretrained model `Demo-Europarl-EN.pcl` as punctuator. If you want to perform punctuation to subtitles, please download this model from the [URL](https://drive.google.com/drive/folders/0B7BsN5f2F1fZQnFsbzJ3TWxxMms?resourcekey=0-6yhuY9FOeITBBWWNdyG2aw) (only Demo-Europarl-EN.pcl is needed) and put it to the folder `preprocessing/narr_process/punctuator/`.
@@ -29,7 +39,7 @@ After downloading data, the model can be run by:
   ```
   python main.py --data_dir <data_dir> --task <task>
   ```
-where <data_dir> is the directory that you save the data and <task> is the task you want to use, <task> can also be `all` if you want to run the model for all tasks in one run.  
+where <data_dir> is the directory that you save the data and <task> is the task you want to use, <task> can also be `all` if you want to run the model for all tasks in one run. If you want to use the sample videos, simply run `python main.py`.  
 This command will run the whole process of **data preprocessing**, **training**, and **segmentation**. 
   
 In the end, it will print the segmentation results as:
