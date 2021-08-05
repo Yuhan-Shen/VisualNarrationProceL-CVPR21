@@ -24,7 +24,8 @@ def run_train(args, task):
     video_lens = [video_embd.shape[0] for video_embd in video_embd_list]
 
     vocab_fname = os.path.join(args.processed_dir, task, 'vocab_concrete.txt')
-    text_embd_list, phrases_list = load_text_data_with_time(text_dir, text_embd_dir, fid_list, gamma=np.sqrt(args.time_weight), conc_threshold=args.conc_threshold, vocab_fname=vocab_fname)
+    text_embd_list, phrases_list = load_text_data_with_time(text_dir, text_embd_dir, fid_list, 
+            gamma=np.sqrt(args.time_weight), conc_threshold=args.conc_threshold, vocab_fname=vocab_fname)
 
     if args.K == 0:
         # set K to be the groundtruth number of steps if args.K == 0
