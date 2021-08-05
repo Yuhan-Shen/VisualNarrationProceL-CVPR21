@@ -4,7 +4,7 @@
 
 This repository contains the implementation of [Learning To Segment Actions From Visual and Language Instructions via Differentiable Weak Sequence Alignment](https://openaccess.thecvf.com/content/CVPR2021/papers/Shen_Learning_To_Segment_Actions_From_Visual_and_Language_Instructions_via_CVPR_2021_paper.pdf) published in CVPR 2021.
 
-> We address the problem of unsupervised action segmentation and feature learning in instructional videos using both visual and language instructions. Our key contributions include Soft Ordered Prototype Learning (SOPL) module and Differentiable Weak Sequence Alignment (DWSA) loss.
+> We address the problem of unsupervised action segmentation and feature learning in instructional videos using both visual and language instructions. Our key contributions include proposing i) a Soft Ordered Prototype Learning (SOPL) method for learning visual and linguistic prototype sequences corresponding to subtasks (key-steps) in videos, and ii) a new class of alignment methods, referred to as Differentiable Weak Sequence Alignment (DWSA), for weak alignment of visual and linguistic prototype sequences while allowing self-supervised feature learning.
 
 
 ## Prerequisites
