@@ -98,6 +98,9 @@ The training module (multimodal feature learning using DWSA) can be run by:
   ```  
  where <test_epoch> is the epoch of the model you want to test on, <bg_ratio> is the ratio of background in your segmentations (default: 0.4).
 
+## Troubleshooting
+We open an issue [#1](https://github.com/Yuhan-Shen/VisualNarrationProceL-CVPR21/issues/1) for common problems when running the codes. Please find solutions or ask questions there to help us improve this repository.
+  
 ## Citation
 If you find the project helpful, we would appreciate if you cite the work:
 
