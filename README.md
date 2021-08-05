@@ -92,7 +92,6 @@ The training module (multimodal feature learning using DWSA) can be run by:
   
 ## Segmentation
 After training, we can load the trained model to get new features, and apply clustering to the new features to get the segmentations. Please run:
-The training module (multimodal feature learning using DWSA) can be run by:
   ```
   python segmentation.py --data_dir <data_dir> --task <task> --test_epoch <test_epoch> --bg_ratio <bg_ratio>
   ```  
