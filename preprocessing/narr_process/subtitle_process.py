@@ -130,7 +130,7 @@ def extract_verb_phrase_from_sent(sent):
             has_prep_flag = False # whether the verb has associated prep obj
             # search for `prep+pobj` within all children of the verb
             prep_children = [child for child in token.head.children if child.dep_ == 'prep']
-            for chid in prep_children:
+            for child in prep_children:
                 pobj_subchildren = [subchild for subchild in child.children if subchild.dep_ == 'pobj']
                 for subchild in pobj_subchildren:
                     if not token.lemma_ == '-PRON-' and not subchild.lemma_ == '-PRON-':
